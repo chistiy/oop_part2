@@ -5,8 +5,6 @@ session_start();
 
 class auth
 {
-// Инициализируем сессию
-
     function pdo(): PDO
     {
         static $pdo;

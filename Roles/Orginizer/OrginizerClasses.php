@@ -2,9 +2,16 @@
 
 namespace App\Roles\Orginizer;
 
-class OrganizerService
+use App\Roles\User;
+
+class OrganizerService extends User\User
 {
-    /**
+
+    public function __construct()
+    {
+        $useInvite = $this->userInvite();
+    }
+        /**
      * @param int $id
      *
      * @return Invite

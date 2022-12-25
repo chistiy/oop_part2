@@ -2,11 +2,19 @@
 namespace App\Roles\Admin;
 
 use App\Roles\User;
-use App\Models\Event;
+use App\entity;
+use App\Roles\UserInterface\userInterface;
 
-class adminService extends User\abstractUser {
+class   adminService extends User\User {
 
-    private function getUsers(): Collection
+public function __construct(userInterface $user)
+{
+    $userBlock = $this->userBlock();
+    $userDelete = $this->userDelete();
+    $userCreate = $this->userCreate();
+}
+
+    public function getUsername(): string
     {
         return User::with('roles')->get();
     }
